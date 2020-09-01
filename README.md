@@ -1,9 +1,9 @@
 # Data-Visualization-Assignment2
 
 outline <br>
-Often a tabular data has implicit grouping, for example a data giving several nancial
+Often a tabular data has implicit grouping, for example a data giving several financial
 statistics of the last 5 years for all states in India. Now the respective two columns are
-state names and years. If we want to visualize one particular attribute over the ve years
+state names and years. If we want to visualize one particular attribute over the five years
 for each state in a single plot, without creating another data, we have to use the concept of
 grouping. <br>
 
