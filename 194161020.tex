@@ -1,0 +1,380 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{\textcolor{black}{Assignment 2: Data Visualization}}
+\author{\textcolor{black}{Rohit Jain 	 | 	194161020}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{question-1}{%
+\section{Question 1:}\label{question-1}}
+
+\textbf{Load the data gapminder and analyze different columns of
+data.Plot life expectancy over time for each country. Do you think the
+plot is meaningful? Justify your answer in markdown}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ gapminder,}
+            \DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ year,}
+                          \DataTypeTok{y =}\NormalTok{ lifeExp, }\DataTypeTok{col=}\NormalTok{country))}
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_line}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{guides}\NormalTok{(}\DataTypeTok{col=}\OtherTok{FALSE}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{theme_classic}\NormalTok{() }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Year"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Life Expectancy"}\NormalTok{, }
+       \DataTypeTok{title=}\StringTok{" Life Expectancy over years!"}\NormalTok{,}
+       \DataTypeTok{subtitle=}\StringTok{"Country Wise"}\NormalTok{, }
+       \DataTypeTok{caption=}\StringTok{"Dataset:gapminder"}\NormalTok{)}\OperatorTok{+}\StringTok{ }
+\StringTok{  }\NormalTok{theme}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{194161020_files/figure-latex/unnamed-chunk-1-1.pdf}
+
+The plot is not very meaningful since we cannot differentiate the
+particular pattern for any country. The plot looks rough and messy and
+hence not very meaningful.
+
+\hypertarget{question-2}{%
+\section{Question 2}\label{question-2}}
+
+\textbf{I. Can you improve the plot from the first question by faceting
+the data? Which is the most appropriate variable (column) to facet the
+data? Plot and justify.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ gapminder,}
+            \DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ year,}
+                          \DataTypeTok{y =}\NormalTok{ lifeExp, }\DataTypeTok{col=}\NormalTok{country))}
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_line}\NormalTok{() }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{facet_wrap}\NormalTok{(}\OperatorTok{~}\NormalTok{continent)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{guides}\NormalTok{(}\DataTypeTok{col=}\OtherTok{FALSE}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_bw}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\NormalTok{theme}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Year"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Life Expectancy"}\NormalTok{, }
+       \DataTypeTok{caption=}\StringTok{"Dataset:gapminder"}\NormalTok{,}
+       \DataTypeTok{subtitle=}\StringTok{"Continent Wise"}\NormalTok{,}
+       \DataTypeTok{title=}\StringTok{" Life Expectancy over years for each country!"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{194161020_files/figure-latex/unnamed-chunk-2-1.pdf}
+\textbf{``Continent''} turns out to be the best column for faceting the
+data into groups because it is categorical in nature while other
+remaining columns have continuous values. Categorical variable makes it
+easy for grouping the data together.
+
+\textbf{II. We can facet the data based on more than one variable, Use
+gss sm data to plot a smoothed scatter plot showing the relationship
+between the age of the respondent and the number of children they have.
+Facet this relation based on race and degree. Also, in markdown,
+describe your observation from the plot in brief.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p<-}\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data=}\NormalTok{gss_sm, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{age, }\DataTypeTok{y=}\NormalTok{childs))}
+
+\NormalTok{p}\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{col=}\StringTok{""}\NormalTok{))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{se=}\OtherTok{FALSE}\NormalTok{, }\DataTypeTok{col=}\StringTok{"red"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{facet_grid}\NormalTok{(race}\OperatorTok{~}\NormalTok{degree)}\OperatorTok{+}
+\StringTok{   }\KeywordTok{guides}\NormalTok{(}\DataTypeTok{col=}\OtherTok{FALSE}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{theme_bw}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\NormalTok{theme}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Age"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Number of Children"}\NormalTok{, }
+       \DataTypeTok{caption=}\StringTok{"Dataset:gss_sm"}\NormalTok{,}
+       \DataTypeTok{subtitle=}\StringTok{"Based on race and degree"}\NormalTok{,}
+       \DataTypeTok{title=}\StringTok{"Age of the respondents vs Number of children"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+\end{verbatim}
+
+\includegraphics{194161020_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+In this graph we can see the relationship between the age of the
+respondent and the number of children they have, grouped based on race
+and degree. The first plot is basically about the respondents who belong
+to white race and have left High School.
+
+\hypertarget{question-3}{%
+\section{Question 3}\label{question-3}}
+
+\textbf{gss sm data contains the political view (polviews) variable.
+Plot a bar graph, with the bar in the chart represented by different
+political views.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p<-}\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data=}\NormalTok{gss_sm, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{polviews))}
+\NormalTok{p}\OperatorTok{+}\KeywordTok{geom_bar}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{col=}\StringTok{""}\NormalTok{,}\DataTypeTok{fill=}\StringTok{""}\NormalTok{ ),}\DataTypeTok{alpha=}\FloatTok{0.6}\NormalTok{)}\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{guides}\NormalTok{(}\DataTypeTok{col=}\OtherTok{FALSE}\NormalTok{,}\DataTypeTok{fill=}\OtherTok{FALSE}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_bw}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\NormalTok{theme}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Political Views"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Count"}\NormalTok{, }
+       \DataTypeTok{title=}\StringTok{"Political views of the respondents!"}\NormalTok{, }
+       \DataTypeTok{caption=}\StringTok{"Dataset:gss_sm"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.text.x =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{angle =} \DecValTok{45}\NormalTok{, }\DataTypeTok{hjust =} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{194161020_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\hypertarget{question-4}{%
+\section{Question 4}\label{question-4}}
+
+\textbf{Again using gss sm data, visualize the frequency plot, with the
+bars representing different political views and each bar in the graph,
+is further categorized by a different religion. Also, visualize
+frequency plot faceted by variable bigregion}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ gss_sm,}
+            \DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ polviews, }
+                          \DataTypeTok{fill =}\NormalTok{ religion))}
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_bar}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{..prop..))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_classic}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\NormalTok{theme}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Political Views"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Frequency"}\NormalTok{, }
+       \DataTypeTok{title=}\StringTok{"Political views of the respondents!"}\NormalTok{,}
+       \DataTypeTok{subtitle=}\StringTok{"Religion wise"}\NormalTok{, }
+       \DataTypeTok{caption=}\StringTok{"Dataset:gss_sm"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.text.x =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{angle =} \DecValTok{45}\NormalTok{, }\DataTypeTok{hjust =} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{194161020_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ gss_sm,}
+            \DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ polviews, }\DataTypeTok{fill =}\NormalTok{ religion))}
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_bar}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{y=}\NormalTok{..prop..))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{facet_wrap}\NormalTok{(}\OperatorTok{~}\NormalTok{bigregion)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_bw}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\NormalTok{theme}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Political Views"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Frequency"}\NormalTok{, }
+       \DataTypeTok{title=}\StringTok{"Political views of the respondents!"}\NormalTok{, }\DataTypeTok{subtitle=}\StringTok{"Bigregion wise"}\NormalTok{, }
+       \DataTypeTok{caption=}\StringTok{"Dataset:gss_sm"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{axis.text.x =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{angle =} \DecValTok{45}\NormalTok{, }\DataTypeTok{hjust =} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{194161020_files/figure-latex/unnamed-chunk-5-2.pdf}
+
+\hypertarget{question-5}{%
+\section{Question 5}\label{question-5}}
+
+Plot following from the gss sm data.
+
+\textbf{I. Histogram. Showcasing ages into bins.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ gss_sm) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ age),}
+                 \DataTypeTok{binwidth =} \DecValTok{1}\NormalTok{, }\DataTypeTok{fill=}\StringTok{"green"}\NormalTok{, }\DataTypeTok{alpha=}\FloatTok{0.35}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Age"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Count"}\NormalTok{, }
+       \DataTypeTok{title=}\StringTok{"Age of the Respondents!"}\NormalTok{, }
+       \DataTypeTok{caption=}\StringTok{"Dataset:gss_sm"}\NormalTok{)}\OperatorTok{+}\KeywordTok{theme_classic}\NormalTok{()}\OperatorTok{+}\NormalTok{theme}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{194161020_files/figure-latex/unnamed-chunk-6-1.pdf} **
+II. Modify the previous histogram, dividing the observation based on
+variable race. Each race should be represented in a different color.**
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ gss_sm) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ age, }\DataTypeTok{fill=}\NormalTok{race), }
+                 \DataTypeTok{binwidth =} \DecValTok{1}\NormalTok{, }\DataTypeTok{alpha=}\FloatTok{0.6}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Age"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Count"}\NormalTok{, }\DataTypeTok{title=}\StringTok{"Age of the Respondents!"}\NormalTok{, }
+       \DataTypeTok{subtitle=}\StringTok{"Race wise"}\NormalTok{, }\DataTypeTok{caption=}\StringTok{"Dataset:gss_sm"}\NormalTok{)}\OperatorTok{+}\KeywordTok{theme_classic}\NormalTok{()}\OperatorTok{+}\NormalTok{theme}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{194161020_files/figure-latex/unnamed-chunk-7-1.pdf}
+\textbf{III. 2 Stacked Density plots, dividing the observation based on
+the variable race:} \textbf{-- In x-axis, choose variable age}
+\textbf{-- In x-axis, choose variable agegrp.} \textbf{Discuss which
+variable among the two age and agegrp, is more appropriate for plots
+like a histogram and density plots and why?}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ gss_sm,}
+            \DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ age, }\DataTypeTok{fill=}\NormalTok{race))}
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_density}\NormalTok{(}\DataTypeTok{alpha =} \FloatTok{0.3}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_classic}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\NormalTok{theme}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Age"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Density"}\NormalTok{, }
+       \DataTypeTok{title=}\StringTok{"2 Stack Density plot for Age"}\NormalTok{,}
+       \DataTypeTok{caption=}\StringTok{"Dataset:gss_sm"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{194161020_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ gss_sm,}
+            \DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ agegrp, }\DataTypeTok{fill=}\NormalTok{race))}
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_density}\NormalTok{(}\DataTypeTok{alpha =} \FloatTok{0.3}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_classic}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\NormalTok{theme}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Agegrp"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Density"}\NormalTok{, }
+       \DataTypeTok{title=}\StringTok{"2 Stack Density plot for Agegrp"}\NormalTok{, }
+       \DataTypeTok{subtitle =} \StringTok{"Race wise"}\NormalTok{, }
+       \DataTypeTok{caption=}\StringTok{"Dataset:gss_sm"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{194161020_files/figure-latex/unnamed-chunk-8-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ gss_sm,}
+            \DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ agegrp, }\DataTypeTok{fill=}\NormalTok{race))}
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{alpha =} \FloatTok{0.5}\NormalTok{,}\DataTypeTok{stat=}\StringTok{"count"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_classic}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\NormalTok{theme}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Agegrp"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Count"}\NormalTok{, }
+       \DataTypeTok{title=}\StringTok{"Histogram for Agegrp"}\NormalTok{, }
+       \DataTypeTok{subtitle =} \StringTok{"Race wise"}\NormalTok{, }
+       \DataTypeTok{caption=}\StringTok{"Dataset:gss_sm"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{194161020_files/figure-latex/unnamed-chunk-8-3.pdf}
+Agegrp is a discrete variable. It serves as a suitable variable for the
+histogram, while when plotted as a density plot , it doesnot give
+discriminative observation.
+
+\textbf{IV. Density plot} \textbf{-- x-axis: age.} \textbf{-- Division
+based on variable degree.} \textbf{-- Faceting based on variable
+income16.}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ gss_sm,}\DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ age )) }\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_density}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{fill=}\NormalTok{degree),}\DataTypeTok{alpha=}\FloatTok{0.5}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{facet_wrap}\NormalTok{(}\OperatorTok{~}\NormalTok{income16)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_bw}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\NormalTok{theme}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{x=}\StringTok{"Age"}\NormalTok{, }\DataTypeTok{y=}\StringTok{"Density"}\NormalTok{,}
+       \DataTypeTok{title=}\StringTok{"Density plot of the Respondents's age!"}\NormalTok{, }
+       \DataTypeTok{caption=}\StringTok{"Dataset: gss_sm"}\NormalTok{, }
+       \DataTypeTok{subtitle=}\StringTok{"Income wise"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{194161020_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\end{document}
